@@ -7,26 +7,42 @@
  * @param {string[]} inputStrings
  * @return {string|undefined}
  */
-function findFirstLongString(inputStrings) {}
+function findFirstLongString(inputStrings) {
+    const isEqualToSeven = (element) => element.length === 7
+   const result = inputStrings.find(isEqualToSeven);
+   return result
+} 
 
 /** return the first odd number in the given array of numbers, or undefined if none is found.
  * @param {number[]} inputNumbers
  * @return {number|undefined}
  */
-function findFirstOddNumber(inputNumbers) {}
+function findFirstOddNumber(inputNumbers) {
+ const isOdd =  (n) => n % 2 === 1
+    const result = inputNumbers.find(isOdd);
+    return result
+}
 
 /** return the LAST "long" string in the given array of strings, or undefined if none is found.
  * @param {string[]} inputStrings
  * @return {string|undefined}
  */
-function findLastLongString(inputStrings) {}
+function findLastLongString(inputStrings) {
+    const isGreaterThanSeven = (element) => element.length > 7
+    const result = inputStrings.findLast(isGreaterThanSeven);
+    return result
+}
 
 /** Given an array of strings of various lengths,
  * return a new array containing only the "long" strings from the input array
  * @param {string[]} inputStrings
  * @returns {string[]}
  * */
-function findAllLongStrings(inputStrings) {}
+function findAllLongStrings(inputStrings) {
+    const isEqualToOrGreaterThanSeven = (element) => element.length >= 7;
+    const result = inputStrings.every(isEqualToOrGreaterThanSeven);
+    return result
+}
 
 /** given an array of numbers, return a new array containing all the odd numbers in the input array.  Returns an empty array if none are found.
  * @param {number[]} inputNumbers
