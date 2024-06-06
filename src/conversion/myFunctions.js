@@ -85,7 +85,9 @@ function findAllPeopleWithALongName(inputObjects) {
  * @return {boolean}
  */
 function areAllNumbersOdd(inputNumbers) {
-    
+    const isOdd = number => number % 2 === 1
+    const result = inputNumbers.every(isOdd)
+    return result
 }
 
 /** Given an array of strings of various lengths,
@@ -93,7 +95,11 @@ function areAllNumbersOdd(inputNumbers) {
  * @param {string[]} inputStrings
  * @returns {boolean}
  * */
-function areAllStringsLong(inputStrings) {}
+function areAllStringsLong(inputStrings) {
+    const isLong = singleString => singleString.length >=7
+    const result = inputStrings.every(isLong)
+    return result
+}
 
 export {
     findFirstLongString,
