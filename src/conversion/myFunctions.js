@@ -40,7 +40,7 @@ function findLastLongString(inputStrings) {
  * */
 function findAllLongStrings(inputStrings) {
     const isEqualToOrGreaterThanSeven = (element) => element.length >= 7;
-    const result = inputStrings.every(isEqualToOrGreaterThanSeven);
+    const result = inputStrings.filter(isEqualToOrGreaterThanSeven);
     return result
 }
 
@@ -48,27 +48,45 @@ function findAllLongStrings(inputStrings) {
  * @param {number[]} inputNumbers
  * @return {number[]}
  */
-function findAllOddNumbers(inputNumbers) {}
+function findAllOddNumbers(inputNumbers) {
+    const isOdd = (element) => element % 2 === 1;
+    const result = inputNumbers.filter(isOdd);
+    return result
+}
 
 /** Given an array of mixed types of value
  * return a new array containing only those elements of type string.
  * @param {any[]} inputArray
  * @returns {string[]}
  * */
-function findAllTheStrings(inputArray) {}
+function findAllTheStrings(inputArray) {
+    const isString = (element) => typeof element === "string"
+    const result = inputArray.filter(isString)
+    return result
+}
 
 /** Given an array of people objects,
  * return a new array containing only those people objects whose firstName OR secondName (or both) is long.
  * @param {{firstName: string, secondName:string}[]} inputObjects
  * @returns {{firstName: string, secondName:string}[]}
  * */
-function findAllPeopleWithALongName(inputObjects) {}
+function findAllPeopleWithALongName(inputObjects) {
+    const isLong = (authorObjects) => {
+        const firstNameLong = authorObjects.firstName.length >= 7;
+        const secondNameLong = authorObjects.secondName.length >= 7;
+        return firstNameLong || secondNameLong
+    }
+    const result = inputObjects.filter(isLong) 
+    return result
+}
 
 /** given an array of numbers return true if all of them are odd, else false.
  * @param {number[]} inputNumbers
  * @return {boolean}
  */
-function areAllNumbersOdd(inputNumbers) {}
+function areAllNumbersOdd(inputNumbers) {
+    
+}
 
 /** Given an array of strings of various lengths,
  * return true if all of the strings are "long", else false
